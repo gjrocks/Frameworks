@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+  <script type='text/javascript' src='../tabs/tabs.js'> </script>
+  <script type='text/javascript' src='../dwr/engine.js'> </script>
+  <script type='text/javascript' src='../dwr/util.js'> </script>
+  <script type='text/javascript' src='../dwr/interface/JFileUpload.js'> </script>
+  <link rel="stylesheet" type="text/css" href="../tabs/tabs.css" />
+  <link rel="stylesheet" type="text/css" href="../generic.css" />
+<script language="javascript">
+
+function uploadFiles() {
+	 // var image = dwr.util.getValue('uploadImage');
+	  var file = dwr.util.getValue('uploadFile');
+	 // var color = dwr.util.getValue('color');
+
+	  JFileUpload.uploadFiles(file, function(data) {
+	    dwr.util.setValue('status', data);
+	  });
+
+	  /*
+	  UploadDownload.uploadFiles(image, file, color, {
+	    callback:function(data) {
+	      dwr.util.setValue('image', data);
+	    },
+	    exceptionHandler:function(ex) {
+	      alert("Error decoding input fields"); 
+	    }
+	  });
+	  */
+	}
+
+
+</script>
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+  <div id="demoDiv">
+File:<input type="file" id="uploadFile" size="30"/>
+  <button onclick="uploadFiles()">Upload</button>
+  </div>
+ Reply: <span id="status" style="background:#eeffdd; padding-left:4px; padding-right:4px;">&nbsp;</span>
+</body>
+</html>
