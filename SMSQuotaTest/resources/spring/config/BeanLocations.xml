@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Database Configuration -->
+	<import resource="../database/DataSource.xml"/>
+	<import resource="../database/Hibernate.xml"/>
+	
+	<!-- Beans Declaration -->
+	<import resource="../beans/Stock.xml"/>
+	<import resource="../beans/Employee.xml"/>
+	<import resource="../beans/Sms.xml"/>
+	 <bean class="com.gjadhav.common.ConfigClass" 
+      		lazy-init="true" scope="singleton" autowire="byName" init-method="init" id="configclass">
+		<property name="name" value="invoiceExportFileManager"/>
+     </bean>
+     
+   
+     
+</beans>

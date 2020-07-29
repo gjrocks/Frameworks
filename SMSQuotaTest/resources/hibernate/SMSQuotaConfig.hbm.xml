@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="com.gjadhav.sms.model.SMSQuotaConfig" table="sms_quota" dynamic-update="true">
+
+        <id name="id" column="q_id">
+            <generator class="native"/>
+        </id>
+        <version name="version" type="long"/>
+        <property name="balance"      column="q_balance"/>  
+        <property name="bundleName"    column="q_bundle"/>
+        <property name="periodInDays"    column="q_period_in_days"/>
+        <property name="startDate"       column="q_start_date" type="timestamp" />
+        <property name="criticalBalancePercentage"      column="q_critical_balance_percentage"/>
+        <property name="lowBalancePercentage"      column="q_low_balance_percentage"/>
+        <property name="maxNoMessages"      column="q_max_messages"/>
+         
+     </class>
+	
+	<query name="getAllSMSQuotaConfigs" cacheable="false">
+    <![CDATA[             
+        select  smsQuotaConfig
+        from    SMSQuotaConfig smsQuotaConfig 
+               
+    ]]>
+    </query>
+   
+   
+</hibernate-mapping>
