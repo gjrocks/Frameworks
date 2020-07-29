@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:EbulkInvoiceUpdate xmlns:tns="http://disclosure.capitarvs.co.uk/schema/EbulkInvoiceUpdate" xmlns:p="http://disclosure.capitarvs.co.uk/schema/EbulkInvoiceUpdateCommon" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://disclosure.capitarvs.co.uk/schema/EbulkInvoiceUpdate ../../../cheqs/src/org/jzen/cheqs/services/integration/invoiceUpdate/schema/EbulkInvoiceUpdate.xsd ">
+   <tns:ApplicantForename>tns:ApplicantForename</tns:ApplicantForename>
+   <tns:ApplicantSurname>tns:ApplicantSurname</tns:ApplicantSurname>
+   <tns:ApplicationSentDate>2001-01-01</tns:ApplicationSentDate>
+   <tns:AppRef>tns:AppRef</tns:AppRef>
+   <tns:OrganisationReference>tns:OrganisationReference</tns:OrganisationReference>
+   <tns:OrganisationName>tns:OrganisationName</tns:OrganisationName>
+   <tns:OrganisationPostcode>tns:OrganisationPostcode</tns:OrganisationPostcode>
+   <tns:OrganisationSector>tns:OrganisationSector</tns:OrganisationSector>
+   <tns:OrganisationPurchaseOrderNumber>tns:OrganisationPurchaseOrderNumber</tns:OrganisationPurchaseOrderNumber>
+   <tns:ApplicationCostCode>tns:ApplicationCostCode</tns:ApplicationCostCode>
+   <tns:ApplicantIsVolunteer>false</tns:ApplicantIsVolunteer>
+   <tns:ApplicationChannel>ebulk</tns:ApplicationChannel>
+   <tns:ApplicationDisclosureType>Basic</tns:ApplicationDisclosureType>
+   <tns:ApplicationBasicFee>0.0</tns:ApplicationBasicFee>
+   <tns:ApplicationAdminFee>0.0</tns:ApplicationAdminFee>
+   <tns:ApplicationDBSAdultFirstFee>0.0</tns:ApplicationDBSAdultFirstFee>
+   <tns:ApplicationDBSAdultFirstAdminFee>0.0</tns:ApplicationDBSAdultFirstAdminFee>
+   <tns:ApplicationPaymentCharge>0.0</tns:ApplicationPaymentCharge>
+   <tns:ApplicationPaymentChargeExempt>true</tns:ApplicationPaymentChargeExempt>
+   <tns:ApplicationVatFee>0.0</tns:ApplicationVatFee>
+   <tns:ApplicationVatExempt>false</tns:ApplicationVatExempt>
+   <tns:ApplicationTotalFee>0.0</tns:ApplicationTotalFee>
+   <tns:ApplicationPaymentIndicator>Invoice</tns:ApplicationPaymentIndicator>
+   <tns:ApplicationRepeatCheck>false</tns:ApplicationRepeatCheck>
+</tns:EbulkInvoiceUpdate>
