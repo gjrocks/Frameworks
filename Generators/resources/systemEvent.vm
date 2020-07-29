@@ -1,0 +1,4 @@
+insert into system_events (se_user_id, se_appl_id, se_category, se_type, se_information, se_remote_ip_address, 
+se_session_id, se_date_created) values ($userid, null, '$secategory', '$setype', null, '0:0:0:0:0:0:0:1', 
+'$sesession', '2014-10-13 14:57:08');
+	

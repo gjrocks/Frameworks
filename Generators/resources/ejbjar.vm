@@ -1,0 +1,30 @@
+package $targetCodePackage;
+
+import java.util.*;
+import java.math.*;
+public class $opClass
+{
+
+#foreach ($mapEntry in $op.entrySet())
+    $mapEntry.value $mapEntry.key;
+    
+#end
+
+
+#foreach ($mapEntry in $op.entrySet())
+    public $mapEntry.value get$opCl.initCap($mapEntry.key)()
+    {
+    return this.$mapEntry.key;
+    }
+    
+    public void set$opCl.initCap($mapEntry.key)($mapEntry.value _$mapEntry.key)
+    {
+    this.$mapEntry.key=_$mapEntry.key;
+    }
+    
+#end
+
+
+}
+	
+	
