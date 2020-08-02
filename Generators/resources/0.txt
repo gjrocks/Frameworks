@@ -1,0 +1,314 @@
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}
+
+
+
+package com.informit.resttemplateexample;
+
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.informit.articleservice.client.ArticleClient;
+import com.informit.articleservice.model.Article;
+import com.informit.articleservice.model.Category;
+
+public class RestTemplateExample
+{
+	public static void main( String[] args )
+	{
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(	"applicationContext.xml" );
+		ArticleClient articleClient = applicationContext.getBean( "articleClient", ArticleClient.class );
+		
+		Article article = articleClient.getArticle( "fun", 1 );
+		System.out.println( "Article: " + article );
+		
+		List<Category> categories = articleClient.getCategories();
+		for( Category category : categories )
+		{
+			System.out.println( "Category: " + category );
+		}
+
+	}
+}

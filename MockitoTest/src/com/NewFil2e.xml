@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:EbulkInvoiceUpdates
+	xmlns:p="http://disclosure.capitarvs.co.uk/schema/EbulkInvoiceUpdateCommon"
+	xmlns:tns="http://disclosure.capitarvs.co.uk/schema/EbulkInvoiceUpdate"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://disclosure.capitarvs.co.uk/schema/EbulkInvoiceUpdate ../../../cheqs/src/org/jzen/cheqs/services/integration/invoiceUpdate/schema/EbulkInvoiceUpdatesBatch.xsd ">
+	<tns:SourceSystemRef>tns:SourceSystemRef</tns:SourceSystemRef> <!--  -->
+	<tns:SapClientCode>tns:SapClientCode</tns:SapClientCode> <!-- SapClientCode  -->
+	<tns:EbulkInvoiceUpdate>
+		<tns:ApplicantForename>tns:ApplicantForename</tns:ApplicantForename> <!-- ApplicantForename  -->
+		<tns:ApplicantSurname>tns:ApplicantSurname</tns:ApplicantSurname> <!--ApplicantSurname  -->
+		<tns:ApplicationSentDate>2001-01-01</tns:ApplicationSentDate> <!-- ApplicationSentDate -->
+		<tns:AppRef>tns:AppRef</tns:AppRef> <!-- AppRef -->
+		<tns:OrganisationReference>tns:OrganisationReference</tns:OrganisationReference> <!-- OrganisationReference -->
+		<tns:OrganisationName>tns:OrganisationName</tns:OrganisationName> <!-- OrganisationName -->
+		<tns:OrganisationPostcode>tns:OrganisationPostcode</tns:OrganisationPostcode> <!--OrganisationPostcode  -->
+		<tns:OrganisationSector>tns:OrganisationSector</tns:OrganisationSector> <!--  -->
+		<tns:OrganisationPurchaseOrderNumber>tns:OrganisationPurchaseOrderNumber</tns:OrganisationPurchaseOrderNumber> <!-- OrganisationPurchaseOrderNumber -->
+		<tns:ApplicationCostCode>tns:ApplicationCostCode</tns:ApplicationCostCode> <!--ApplicationCostCode  -->
+		<tns:ApplicantIsVolunteer>false</tns:ApplicantIsVolunteer> <!-- ApplicantIsVolunteer -->
+		<tns:ApplicationChannel>ebulk</tns:ApplicationChannel> <!-- ApplicationChannel  -->
+		<tns:ApplicationDisclosureType>Basic</tns:ApplicationDisclosureType> <!-- ApplicationDisclosureType -->
+		<tns:ApplicationBasicFee>0.0</tns:ApplicationBasicFee> <!--ApplicationBasicFee  -->
+		<tns:ApplicationAdminFee>0.0</tns:ApplicationAdminFee>  <!--ApplicationAdminFee  -->
+		<tns:ApplicationDBSAdultFirstFee>0.0</tns:ApplicationDBSAdultFirstFee> <!-- ApplicationDBSAdultFirstFee -->
+		<tns:ApplicationDBSAdultFirstAdminFee>0.0</tns:ApplicationDBSAdultFirstAdminFee> <!-- ApplicationDBSAdultFirstAdminFee -->
+		<tns:ApplicationPaymentCharge>0.0</tns:ApplicationPaymentCharge>  <!-- ApplicationPaymentCharge -->
+		<tns:ApplicationPaymentChargeExempt>true</tns:ApplicationPaymentChargeExempt> <!--ApplicationPaymentChargeExempt  -->
+		<tns:ApplicationVatFee>0.0</tns:ApplicationVatFee> <!-- ApplicationVatFee -->
+		<tns:ApplicationVatExempt>false</tns:ApplicationVatExempt> <!--ApplicationVatExempt  -->
+		<tns:ApplicationTotalFee>0.0</tns:ApplicationTotalFee> <!-- ApplicationTotalFee -->
+		<tns:ApplicationPaymentIndicator>Invoice</tns:ApplicationPaymentIndicator> <!-- ApplicationPaymentIndicator -->
+		<tns:ApplicationRepeatCheck>false</tns:ApplicationRepeatCheck> <!-- ApplicationRepeatCheck -->
+	</tns:EbulkInvoiceUpdate>
+</tns:EbulkInvoiceUpdates>

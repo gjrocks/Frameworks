@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- Stock business object -->
+   <bean id="empployeeBo" class="com.gjadhav.employee.bo.impl.EmployeeBoImpl" >
+   		<property name="employeeDao" ref="employeeDao" />
+   </bean>
+ 
+   <!-- Stock Data Access Object -->
+   <bean id="employeeDao" class="com.gjadhav.employee.dao.impl.EmployeeDaoImpl" >
+   		<property name="sessionFactory" ref="sessionFactory"></property>
+   </bean>
+   
+   		
+</beans>

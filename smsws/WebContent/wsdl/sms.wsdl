@@ -1,0 +1,369 @@
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.infracast.com/schemas/managedtext/v10_2" xmlns:s1="http://www.infracast.com/schemas/emx/v10_2" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.infracast.com/schemas/managedtext/v10_2">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.infracast.com/schemas/managedtext/v10_2">
+<s:import namespace="http://www.infracast.com/schemas/emx/v10_2"/>
+<s:element name="pingRequest" type="s1:EmxPingRequest"/>
+<s:element name="customerId" type="s:int"/>
+<s:element name="serviceId" type="s:int"/>
+<s:element name="username" type="s:string"/>
+<s:element name="password" type="s:string"/>
+<s:element name="custMessageId" type="s:int"/>
+<s:element name="custMessageRef" type="s:string"/>
+<s:element name="voiceOriginator" type="s:string"/>
+<s:element name="voiceAccent" type="s:string"/>
+<s:element name="numericDestination" type="s:string"/>
+<s:element name="messageText" type="s:string"/>
+<s:element name="txVoiceAttributes" type="tns:EmxTxVoiceMessageAttribs"/>
+<s:complexType name="EmxTxVoiceMessageAttribs">
+<s:complexContent mixed="false">
+<s:extension base="tns:EmxTxMessageAttribs">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="subject" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="voiceCallType" type="s:unsignedByte"/>
+<s:element minOccurs="0" maxOccurs="1" name="voiceCallbackNumber" type="s:string"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxTxMessageAttribs">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="submitAt" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="expireAt" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="expireAfter" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="antisocialStart" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="antisocialEnd" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="costCentreId" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="custBillingRef1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custBillingRef2" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef2" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef3" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef4" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef5" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef6" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef7" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custSystemRef8" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="receiptMethod" type="s:unsignedByte"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmxTxSmsMessageAttribs">
+<s:complexContent mixed="false">
+<s:extension base="tns:EmxTxMessageAttribs">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="contentType" type="s:unsignedByte"/>
+<s:element minOccurs="0" maxOccurs="1" name="flashMessage" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="pricePoint" type="s:short"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="smsMmsOriginator" type="tns:EmxSmsMmsOriginator"/>
+<s:complexType name="EmxSmsMmsOriginator">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="internationalPhoneNumber" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="alphatag" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="shortcode" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="txSmsAttributes" type="tns:EmxTxSmsMessageAttribs"/>
+<s:element name="mtMessageId" type="s:unsignedInt"/>
+<s:element name="pingText" type="s:string"/>
+<s:element name="PingResponse" type="s1:EmxPingResponse"/>
+<s:element name="status" type="tns:EmxStatus"/>
+<s:complexType name="EmxStatus">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" form="unqualified" name="value" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" form="unqualified" name="code" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" form="unqualified" name="text" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="txtMessageStatus" type="tns:EmxTextMessageStatus"/>
+<s:complexType name="EmxTextMessageStatus">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="mtMessageId" type="s:unsignedInt"/>
+<s:element minOccurs="1" maxOccurs="1" name="serviceId" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="gatewayId" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="custMessageId" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="custMessageRef" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="smsMmsOriginator" type="tns:EmxSmsMmsOriginator"/>
+<s:element minOccurs="0" maxOccurs="1" name="numericDestination" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="sendStatus" type="s:unsignedByte"/>
+<s:element minOccurs="0" maxOccurs="1" name="completionText" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="deliveryReport" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="deliveryStatus" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="deliveryErrorCode" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="createdAt" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="submitAt" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="submittedAt" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="enRouteAt" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="completedAt" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="vxMessageId" type="s:unsignedInt"/>
+<s:element name="sendSmsRequest" type="s1:EmxSendSmsRequest"/>
+<s:element name="SendSMSResponse" type="s1:EmxSendSmsResponse"/>
+<s:element name="sendVoiceRequest" type="s1:EmxSendVoiceRequest"/>
+<s:element name="SendVoiceResponse" type="s1:EmxSendVoiceResponse"/>
+<s:element name="smsNotificationRequest" type="s1:EmxSMSNotificationRequest"/>
+<s:element name="SMSNotification" type="s1:EmxSMSNotificationResponse"/>
+</s:schema>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.infracast.com/schemas/emx/v10_2">
+<s:import namespace="http://www.infracast.com/schemas/managedtext/v10_2"/>
+<s:complexType name="EmxPingRequest">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxRequestMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:pingText"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxRequestMessage">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" ref="tns:customerId"/>
+<s:element minOccurs="1" maxOccurs="1" ref="tns:serviceId"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:username"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:password"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmxSendVoiceRequest">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxRequestMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="txVoiceMessageDetails" type="s1:EmxTxVoiceMessageDetails"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxTxVoiceMessageDetails">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" ref="tns:custMessageId"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:custMessageRef"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:voiceOriginator"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:voiceAccent"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:numericDestination"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:messageText"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:txVoiceAttributes"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmxSendSmsRequest">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxRequestMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="txSmsMessageDetails" type="s1:EmxTxSmsMessageDetails"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxTxSmsMessageDetails">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:smsMmsOriginator"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:numericDestination"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:messageText"/>
+<s:element minOccurs="1" maxOccurs="1" ref="tns:custMessageId"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:custMessageRef"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:txSmsAttributes"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmxSMSNotificationRequest">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxRequestMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="SmsNotificationDetails" type="s1:EmxSMSNotificationDetails"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxSMSNotificationDetails">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" ref="tns:mtMessageId"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmxPingResponse">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxResponseMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:pingText"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxResponseMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:status"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmxSendSmsResponse">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxResponseMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="txSmsMessageResult" type="s1:EmxTxSmsMessageResult"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxTxSmsMessageResult">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:mtMessageId"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:status"/>
+<s:element minOccurs="1" maxOccurs="1" ref="tns:custMessageId"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:custMessageRef"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="EmxSMSNotificationResponse">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxResponseMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" ref="tns:txtMessageStatus"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxSendVoiceResponse">
+<s:complexContent mixed="false">
+<s:extension base="s1:EmxResponseMessage">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="txVoiceMessageResult" type="s1:EmxTxVoiceMessageResult"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:complexType name="EmxTxVoiceMessageResult">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" ref="tns:custMessageId"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:custMessageRef"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:status"/>
+<s:element minOccurs="0" maxOccurs="1" ref="tns:vxMessageId"/>
+</s:sequence>
+</s:complexType>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="PingSoapIn">
+<wsdl:part name="pingRequest" element="tns:pingRequest"/>
+</wsdl:message>
+<wsdl:message name="PingSoapOut">
+<wsdl:part name="PingResult" element="tns:PingResponse"/>
+</wsdl:message>
+<wsdl:message name="SendSMSSoapIn">
+<wsdl:part name="sendSmsRequest" element="tns:sendSmsRequest"/>
+</wsdl:message>
+<wsdl:message name="SendSMSSoapOut">
+<wsdl:part name="SendSMSResult" element="tns:SendSMSResponse"/>
+</wsdl:message>
+<wsdl:message name="SendVoiceSoapIn">
+<wsdl:part name="sendVoiceRequest" element="tns:sendVoiceRequest"/>
+</wsdl:message>
+<wsdl:message name="SendVoiceSoapOut">
+<wsdl:part name="SendVoiceResult" element="tns:SendVoiceResponse"/>
+</wsdl:message>
+<wsdl:message name="SMSNotificationSoapIn">
+<wsdl:part name="smsNotificationRequest" element="tns:smsNotificationRequest"/>
+</wsdl:message>
+<wsdl:message name="SMSNotificationSoapOut">
+<wsdl:part name="SMSNotificationResult" element="tns:SMSNotification"/>
+</wsdl:message>
+<wsdl:portType name="EmxServiceSoap">
+<wsdl:operation name="Ping">
+<wsdl:input message="tns:PingSoapIn"/>
+<wsdl:output message="tns:PingSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SendSMS">
+<wsdl:input message="tns:SendSMSSoapIn"/>
+<wsdl:output message="tns:SendSMSSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SendVoice">
+<wsdl:input message="tns:SendVoiceSoapIn"/>
+<wsdl:output message="tns:SendVoiceSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SMSNotification">
+<wsdl:input message="tns:SMSNotificationSoapIn"/>
+<wsdl:output message="tns:SMSNotificationSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="EmxServiceSoap" type="tns:EmxServiceSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Ping">
+<soap:operation soapAction="http://localhost:8080/EmxServices/Ping" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendSMS">
+<soap:operation soapAction="http://localhost:8080/EmxServices/SendSMS" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendVoice">
+<soap:operation soapAction="http://localhost:8080/EmxServices/SendVoice" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SMSNotification">
+<soap:operation soapAction="http://localhost:8080/EmxServices/SMSNotification" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="EmxServiceSoap12" type="tns:EmxServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Ping">
+<soap12:operation soapAction="http://localhost:8080/EmxServices/Ping" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendSMS">
+<soap12:operation soapAction="http://localhost:8080/EmxServices/SendSMS" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SendVoice">
+<soap12:operation soapAction="http://localhost:8080/EmxServices/SendVoice" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SMSNotification">
+<soap12:operation soapAction="http://localhost:8080/EmxServices/SMSNotification" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="EmxService">
+<wsdl:port name="EmxServiceSoap" binding="tns:EmxServiceSoap">
+<soap:address location="http://localhost:8080/soapapi/emx2ws.asmx"/>
+</wsdl:port>
+<wsdl:port name="EmxServiceSoap12" binding="tns:EmxServiceSoap12">
+<soap12:address location="http://localhost:8080/soapapi/emx2ws.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

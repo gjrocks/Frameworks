@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:StatusPullRequest xmlns:p="http://disclosure.capitarvs.co.uk/schema/ebulkws/StatusPull/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://disclosure.capitarvs.co.uk/schema/ebulkws/StatusPull/ ../../cheqs_HEAD_Code/src/org/jzen/cheqs/web/ws/status/schema/EbulkStatusPull.xsd ">
+  <p:applicationStatusRequest>
+    <p:ApplicationReference>p:ApplicationReference</p:ApplicationReference>
+  </p:applicationStatusRequest>
+</p:StatusPullRequest>

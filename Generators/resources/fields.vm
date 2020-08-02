@@ -1,0 +1,53 @@
+package $targetCodePackage;
+
+import java.util.*;
+import java.math.*;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.ProjectionList;
+import org.hibernate.criterion.Projections;
+import org.jzen.cheqs.model.report.ReportField;
+import org.jzen.cheqs.model.types.ReportFieldGroup;
+public class $opClass
+{
+
+String[] fields={
+$fields
+};
+
+public String[] getFields() {
+	return fields;
+}
+
+public void setFields(String[] fields) {
+	this.fields = fields;
+}
+
+//org.hibernate.criterion.ProjectionList projectionList=org.hibernate.criterion.Projections.projectionList();
+ 
+                                            
+                        
+public ProjectionList getProjectionList()
+{
+org.hibernate.criterion.ProjectionList projectionList=org.hibernate.criterion.Projections.projectionList();
+#foreach ($mapEntry in $opm.entrySet())
+projectionList.add( Projections.property("$mapEntry.key"),"$mapEntry.value");
+#end 
+return projectionList;
+}
+
+
+public List<ReportField> getReportFields()
+{
+    List<ReportField> reportFields = new LinkedList<ReportField>();
+	#foreach ($mapEntry in $opm.entrySet())
+	reportFields.add(new ReportField("$mapEntry.value", "$mapEntry.key", ReportFieldGroup.COMMON) );
+	#end
+    
+	return reportFields;	
+}
+
+
+
+
+}
+	
